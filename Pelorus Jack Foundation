@@ -1,0 +1,708 @@
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Pelorus Jack Foundation | Natur- und Tierschutz</title>
+
+  <meta name="description" content="Informationen über Wildtierschutz, Meeresschutz, Waldschutz und den verantwortungsvollen Umgang mit unserer Natur.">
+
+  <meta name="theme-color" content="#123d2b">
+
+  <style>
+    :root {
+      --green: #123d2b;
+      --green-light: #1f6546;
+      --cream: #f6f5ed;
+      --light-green: #e2ecdf;
+      --gold: #d6b46a;
+      --text: #24362d;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    a {
+      color: var(--green-light);
+    }
+
+    .container {
+      width: min(1120px, 88%);
+      margin: 0 auto;
+    }
+
+    header {
+      background: var(--green);
+      color: var(--white);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 3px 14px #00000018;
+    }
+
+    .header-inner {
+      min-height: 82px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      padding: 15px 0;
+    }
+
+    .brand {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 1.15rem;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    nav a {
+      color: var(--white);
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    nav a:hover {
+      color: var(--gold);
+    }
+
+    .hero {
+      background:
+        linear-gradient(115deg, #123d2bf2, #123d2b9c),
+        url("https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1800&q=85")
+        center 48% / cover no-repeat;
+      color: var(--white);
+      padding: 115px 0 125px;
+    }
+
+    .hero-content {
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      text-transform: uppercase;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 7vw, 5rem);
+      line-height: 1.08;
+      margin: 18px 0;
+    }
+
+    .hero p {
+      font-size: clamp(1rem, 2.5vw, 1.2rem);
+      max-width: 650px;
+      color: #f0f4ef;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 13px 24px;
+      background: var(--gold);
+      color: #183324;
+      text-decoration: none;
+      font-weight: 700;
+      border-radius: 5px;
+    }
+
+    .button:hover {
+      background: #ead29a;
+    }
+
+    .notice-wrap {
+      padding-top: 28px;
+    }
+
+    .notice {
+      padding: 18px 20px;
+      border-left: 5px solid #b18a35;
+      background: #fff4d7;
+      border-radius: 4px;
+      font-size: 0.94rem;
+    }
+
+    .notice strong {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    section.content-section {
+      padding: 75px 0;
+    }
+
+    .section-heading {
+      max-width: 720px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      color: var(--green);
+      font-size: clamp(1.8rem, 4vw, 2.7rem);
+      line-height: 1.2;
+      margin: 8px 0 15px;
+    }
+
+    .section-heading p {
+      color: #536259;
+    }
+
+    .mission {
+      background: var(--white);
+    }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 45px;
+      align-items: center;
+    }
+
+    .mission-image {
+      width: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      display: block;
+    }
+
+    .mission-text h2 {
+      color: var(--green);
+      font-size: 2rem;
+      line-height: 1.25;
+    }
+
+    .topics-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 24px;
+    }
+
+    .topic-card {
+      background: var(--white);
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 20px #183b2b0c;
+      transition: transform 0.2s ease;
+    }
+
+    .topic-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .topic-card img {
+      display: block;
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+    }
+
+    .topic-body {
+      padding: 23px;
+    }
+
+    .topic-body h3 {
+      color: var(--green-light);
+      margin-top: 0;
+      font-size: 1.25rem;
+    }
+
+    .topic-body p {
+      margin-bottom: 0;
+    }
+
+    .values {
+      background: var(--light-green);
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 30px;
+    }
+
+    .value-item {
+      padding: 20px 0;
+    }
+
+    .value-item h3 {
+      color: var(--green);
+      font-size: 1.2rem;
+    }
+
+    .value-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--green-light);
+    }
+
+    .resources {
+      background: var(--white);
+    }
+
+    .resource-link {
+      display: inline-block;
+      margin-top: 12px;
+      font-weight: 700;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 4px;
+    }
+
+    footer {
+      background: #0b291d;
+      color: #e8eee9;
+      padding: 45px 0 25px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr;
+      gap: 35px;
+      padding-bottom: 25px;
+    }
+
+    footer h2 {
+      color: var(--white);
+      font-size: 1.3rem;
+    }
+
+    footer a {
+      color: #d8e7d9;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid #ffffff26;
+      padding-top: 18px;
+      font-size: 0.88rem;
+      color: #c5d2c8;
+    }
+
+    @media (max-width: 800px) {
+      .mission-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+      }
+
+      .topics-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero {
+        padding: 85px 0 95px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .container {
+        width: 90%;
+      }
+
+      .header-inner {
+        align-items: flex-start;
+      }
+
+      nav {
+        gap: 10px 14px;
+      }
+
+      .topics-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .topic-card img {
+        height: 230px;
+      }
+
+      section.content-section {
+        padding: 52px 0;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+
+      .topic-card {
+        transition: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container header-inner">
+      <a class="brand" href="#start">
+        Pelorus Jack Foundation
+      </a>
+
+      <nav aria-label="Hauptnavigation">
+        <a href="#start">Startseite</a>
+        <a href="#mission">Unsere Mission</a>
+        <a href="#themen">Schutzgebiete</a>
+        <a href="#werte">Unsere Werte</a>
+        <a href="#kontakt">Informationen</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="start">
+      <div class="container hero-content">
+        <span class="eyebrow">Natur schützen. Leben bewahren.</span>
+
+        <h1>Eine Stimme für die Natur und ihre Tiere.</h1>
+
+        <p>
+          Unsere Erde ist die Heimat unzähliger Lebewesen.
+          Entdecke, warum der Schutz von Wildtieren, Meeren
+          und Wäldern für die Zukunft unseres Planeten so
+          wichtig ist.
+        </p>
+
+        <a class="button" href="#mission">
+          Unsere Mission entdecken
+        </a>
+      </div>
+    </section>
+
+    <div class="container notice-wrap">
+      <aside class="notice">
+        <strong>Wichtiger Hinweis zur Identität dieser Website</strong>
+        Diese Website ist ein unabhängiges Informationsprojekt
+        über Natur- und Tierschutz. Sie ist nicht die offizielle
+        Website der Pelorus Jack Foundation und behauptet keine
+        offizielle Verbindung zu dieser Organisation. Es werden
+        hier keine Spenden gesammelt und keine Zahlungen
+        entgegengenommen.
+      </aside>
+    </div>
+
+    <section class="content-section mission" id="mission">
+      <div class="container mission-grid">
+        <div class="mission-text">
+          <span class="eyebrow">Warum Naturschutz wichtig ist</span>
+
+          <h2>Unsere Mission: Wissen, Mitgefühl und Verantwortung.</h2>
+
+          <p>
+            Die Natur ist ein empfindliches Gleichgewicht aus
+            Lebensräumen, Pflanzen und Tieren. Wenn Arten
+            verschwinden und Lebensräume zerstört werden,
+            hat das Folgen für ganze Ökosysteme.
+          </p>
+
+          <p>
+            Wir möchten Menschen über diese Herausforderungen
+            informieren, zum Nachdenken anregen und zeigen,
+            wie verantwortungsbewusstes Handeln zum Schutz
+            unseres Planeten beitragen kann.
+          </p>
+
+          <a class="resource-link" href="#themen">
+            Unsere Schwerpunktthemen ansehen →
+          </a>
+        </div>
+
+        <img
+          class="mission-image"
+          src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1000&q=85"
+          alt="Wildtiere in ihrer natürlichen Umgebung"
+          loading="lazy"
+        >
+      </div>
+    </section>
+
+    <section class="content-section" id="themen">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Unsere Schwerpunkte</span>
+
+          <h2>Die Natur braucht unseren Schutz.</h2>
+
+          <p>
+            Von bedrohten Wildtieren bis zu den Tiefen der
+            Ozeane: Jedes Ökosystem spielt eine wichtige Rolle
+            für das Leben auf unserer Erde.
+          </p>
+        </div>
+
+        <div class="topics-grid">
+          <article class="topic-card">
+            <img
+              src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?auto=format&fit=crop&w=800&q=85"
+              alt="Elefant in der Wildnis"
+              loading="lazy"
+            >
+
+            <div class="topic-body">
+              <h3>Wildtierschutz</h3>
+
+              <p>
+                Wilderei, illegaler Tierhandel und die
+                Zerstörung natürlicher Lebensräume bedrohen
+                zahlreiche Tierarten. Aufklärung ist ein
+                wichtiger Schritt, um diese Probleme besser
+                zu verstehen.
+              </p>
+            </div>
+          </article>
+
+          <article class="topic-card">
+            <img
+              src="https://images.unsplash.com/photo-1518467166778-b88f373ffec7?auto=format&fit=crop&w=800&q=85"
+              alt="Meer und Wellen"
+              loading="lazy"
+            >
+
+            <div class="topic-body">
+              <h3>Meeresschutz</h3>
+
+              <p>
+                Ozeane sind Heimat einer beeindruckenden
+                Vielfalt von Lebewesen. Wir informieren
+                über Meeresverschmutzung, bedrohte Arten
+                und die Bedeutung gesunder Meeresökosysteme.
+              </p>
+            </div>
+          </article>
+
+          <article class="topic-card">
+            <img
+              src="https://images.unsplash.com/photo-1448375240586-882707db888b?auto=format&fit=crop&w=800&q=85"
+              alt="Grüner Wald mit hohen Bäumen"
+              loading="lazy"
+            >
+
+            <div class="topic-body">
+              <h3>Wälder bewahren</h3>
+
+              <p>
+                Wälder bieten unzähligen Arten ein Zuhause,
+                speichern Kohlenstoff und tragen zur
+                Stabilität des Klimas bei. Ihr Erhalt ist
+                entscheidend für Mensch und Natur.
+              </p>
+            </div>
+          </article>
+
+          <article class="topic-card">
+            <img
+              src="https://images.unsplash.com/photo-1543852786-1cf6624b9987?auto=format&fit=crop&w=800&q=85"
+              alt="Katze schaut aufmerksam in die Kamera"
+              loading="lazy"
+            >
+
+            <div class="topic-body">
+              <h3>Tierschutz</h3>
+
+              <p>
+                Tiere verdienen einen verantwortungsvollen
+                und respektvollen Umgang. Wissen über
+                artgerechte Haltung und Tierwohl hilft,
+                unnötiges Leiden zu verhindern.
+              </p>
+            </div>
+          </article>
+
+          <article class="topic-card">
+            <img
+              src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?auto=format&fit=crop&w=800&q=85"
+              alt="Wasser und Meereswellen"
+              loading="lazy"
+            >
+
+            <div class="topic-body">
+              <h3>Schutz der Ozeane</h3>
+
+              <p>
+                Plastik und andere Abfälle belasten marine
+                Lebensräume. Bewusster Konsum und ein
+                verantwortungsvoller Umgang mit Ressourcen
+                können einen Unterschied machen.
+              </p>
+            </div>
+          </article>
+
+          <article class="topic-card">
+            <img
+              src="https://images.unsplash.com/photo-1470071459604-3b5ec3a7fe05?auto=format&fit=crop&w=800&q=85"
+              alt="Grüne Landschaft und Berge"
+              loading="lazy"
+            >
+
+            <div class="topic-body">
+              <h3>Umweltbewusstsein</h3>
+
+              <p>
+                Nachhaltige Entscheidungen im Alltag können
+                helfen, Ressourcen zu schonen und die
+                natürlichen Grundlagen für kommende
+                Generationen zu bewahren.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section values" id="werte">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Was uns wichtig ist</span>
+
+          <h2>Verantwortung beginnt mit Wissen.</h2>
+
+          <p>
+            Naturschutz braucht Aufmerksamkeit, verlässliche
+            Informationen und die Bereitschaft, aus Mitgefühl
+            verantwortungsvolle Entscheidungen zu treffen.
+          </p>
+        </div>
+
+        <div class="values-grid">
+          <article class="value-item">
+            <div class="value-number">01</div>
+            <h3>Aufklärung</h3>
+            <p>
+              Wir möchten verständliche Informationen über
+              ökologische Herausforderungen und bedrohte
+              Arten zugänglich machen.
+            </p>
+          </article>
+
+          <article class="value-item">
+            <div class="value-number">02</div>
+            <h3>Mitgefühl</h3>
+            <p>
+              Respekt vor Tieren und ihren natürlichen
+              Lebensräumen sollte ein wichtiger Bestandteil
+              unseres Handelns sein.
+            </p>
+          </article>
+
+          <article class="value-item">
+            <div class="value-number">03</div>
+            <h3>Verantwortung</h3>
+            <p>
+              Jeder Mensch kann sich informieren, bewusster
+              konsumieren und seriöse Naturschutzarbeit
+              unterstützen.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="content-section resources" id="kontakt">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Weiterführende Informationen</span>
+
+          <h2>Informiere dich. Prüfe Quellen. Handle bewusst.</h2>
+
+          <p>
+            Wenn du mehr über Naturschutz erfahren möchtest,
+            nutze verlässliche Informationsquellen und prüfe
+            die Herkunft von Aussagen, bevor du sie weitergibst.
+          </p>
+
+          <p>
+            Informationen über die Organisation Pelorus Jack
+            Foundation findest du auf ihrer offiziellen Website.
+          </p>
+
+          <a
+            class="resource-link"
+            href="https://www.pelorus-jack.org/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Offizielle Website der Pelorus Jack Foundation →
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Pelorus Jack Foundation</h2>
+
+          <p>
+            Eine unabhängige Informationsseite über
+            Natur-, Umwelt- und Tierschutz.
+          </p>
+        </div>
+
+        <div>
+          <h2>Transparenz</h2>
+
+          <p>
+            Diese Website ist nicht die offizielle Website
+            der Pelorus Jack Foundation. Es besteht keine
+            behauptete offizielle Verbindung zur Organisation.
+            Über diese Website werden keine Spenden oder
+            Zahlungen entgegengenommen.
+          </p>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>
+          © <span id="year">2026</span> Unabhängiges
+          Informationsprojekt. Alle Rechte vorbehalten.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+  </script>
+
+</body>
+</html>
